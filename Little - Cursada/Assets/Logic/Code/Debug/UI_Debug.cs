@@ -12,7 +12,7 @@ public class UI_Debug : MonoBehaviour
 	
     void Update()
     {
-		_newText = "";
+		//_newText = "";
         _newText += player.GetComponent<Rigidbody>().velocity.y.ToString();
         //_newText += (player.GetComponent<Player_Body>().angle * 360).ToString();
         //velocity.text = _newText;
