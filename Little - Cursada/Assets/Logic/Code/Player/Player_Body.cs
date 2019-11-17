@@ -3,20 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void BodyEvent();
+public delegate void BodyEvents(BodyEvent typeOfEvent);
 [RequireComponent(typeof(Rigidbody))]
 public class Player_Body : GenericFunctions, IUpdateable
 {
 	#region Variables
 
 	#region Constants
-	const int WATER_LAYER = 4;
+	[SerializeField]
+	LayerMask CLIMBABLE_TOP_LAYER;
 	#endregion
 
 	#region Public
-	public event BodyEvent PlayerJumpedEvent;
-	public event BodyEvent PlayerClimbingEvent;
-	public event BodyEvent PlayerLandedEvent;
+	public event BodyEvents BodyEvents;
 	#endregion
 
 	#region Serialized
@@ -101,7 +100,7 @@ public class Player_Body : GenericFunctions, IUpdateable
 				if (_flags[Flag.IsInTheAir])
 				{
 					//Event
-					PlayerLandedEvent?.Invoke();
+					BodyEvents?.Invoke(BodyEvent.LAND);
 					_flags[Flag.IsInTheAir] = false;
 				}
 				if (_flags[Flag.InCoyoteTime])
@@ -263,7 +262,7 @@ public class Player_Body : GenericFunctions, IUpdateable
 				_flags[Flag.InCoyoteTime] = false;
 
 				//Event
-				PlayerJumpedEvent();
+				BodyEvents(BodyEvent.JUMP);
 				break;
 			}
 			case "In the Air Timer":
@@ -277,7 +276,7 @@ public class Player_Body : GenericFunctions, IUpdateable
 				_RB.isKinematic = false;
 
 				//Event
-				PlayerJumpedEvent?.Invoke();
+				BodyEvents?.Invoke(BodyEvent.JUMP);
 				break;
 			}
 		}
@@ -326,7 +325,7 @@ public class Player_Body : GenericFunctions, IUpdateable
 				_RB.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
 
 				//Event
-				PlayerJumpedEvent?.Invoke();
+				BodyEvents?.Invoke(BodyEvent.JUMP);
 				_jumpTimer.GottaCount = true;
 
 				//Sound
@@ -346,30 +345,6 @@ public class Player_Body : GenericFunctions, IUpdateable
 	/// <returns></returns>
 	bool DecideIfJump()
 	{
-		#region OLD
-		//print("IN THE AIR: " + _flags[Flag.IsInTheAir]);
-		//if (_flags[Flag.IsInTheAir])
-		//{
-		//	Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 1000, 1 << 11);
-		//	if (hit.distance < transform.localScale.y / 2 + _jumpRaycastTreshold)
-		//	{
-		//		print("RAY JUMP");
-		//		Debug.DrawRay(transform.position, Vector3.down, Color.green, 1);
-		//		return true;
-		//	}
-		//	else
-		//	{
-		//		Debug.DrawRay(transform.position, Vector3.down, Color.red, 1);
-		//		return false;
-		//	}
-		//}
-		//else
-		//{
-		//	print("NORMAL JUMP");
-		//	Debug.DrawRay(transform.position, Vector3.down, Color.yellow, 1);
-		//	return true;
-		//} 
-		#endregion
 		return _flags[Flag.IsInTheAir] ? false : true;
 	}
 
@@ -394,18 +369,12 @@ public class Player_Body : GenericFunctions, IUpdateable
 			_RB.isKinematic = true;
 
 			//Event
-			PlayerClimbingEvent?.Invoke();
+			BodyEvents?.Invoke(BodyEvent.CLIMB);
 		}
 		//-----------------------------------------------------------ACA--------------------------
 		else if (_flags[Flag.Climbing])
 		{
 			if(!_climbTimer.Counting) _climbTimer.GottaCount = true;
-			//_flags[Flag.Climbing] = false;
-			//_RB.isKinematic = false;
-
-			////Event
-			//print("CLIMB");
-			//PlayerJumpedEvent?.Invoke();
 		}
 	}
 
@@ -456,8 +425,6 @@ public class Player_Body : GenericFunctions, IUpdateable
 	public void StopJump()
 	{
 		_RB.velocity += Vector3.up * Physics2D.gravity.y * (_lowJumpMultiplier - 1) * Time.deltaTime;
-		//COMMENT
-		//Glide(false);
 	}
 
 	/// <summary>
@@ -483,6 +450,14 @@ public class Player_Body : GenericFunctions, IUpdateable
 	#endregion
 
 	#region Collisions
+	private void OnTriggerEnter(Collider other)
+	{
+		if(other.gameObject.layer == CLIMBABLE_TOP_LAYER)
+		{
+			BodyEvents(BodyEvent.TRIGGER);
+		}
+	}
+
 	private void OnCollisionStay(Collision collision)
 	{
 		_flags[Flag.Colliding] = true;

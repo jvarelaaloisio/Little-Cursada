@@ -37,12 +37,12 @@ public class Player_Brain : GenericFunctions, IUpdateable
 		IS_JUMPING,
 		IS_GLIDING,
 		IS_CLIMBING,
+		IS_CLIMBING_TO_TOP,
 		IS_ON_TOP,
 		IS_HIT,
 		IS_DEAD
 	}
 	Dictionary<Flag, bool> _flags = new Dictionary<Flag, bool>();
-	//bool[] _flags = new bool[Flag.PIVOT];
 	#endregion
 
 	#region States
@@ -103,6 +103,11 @@ public class Player_Brain : GenericFunctions, IUpdateable
 				ControlClimbInput();
 				break;
 			}
+			case PlayerState.CLIMBING_TO_TOP:
+			{
+
+				break;
+			}
 			case PlayerState.GOT_HIT:
 			{
 				break;
@@ -124,6 +129,8 @@ public class Player_Brain : GenericFunctions, IUpdateable
 	#endregion
 
 	#region Private
+
+		#region Setup
 	/// <summary>
 	/// Setups the flags
 	/// </summary>
@@ -152,8 +159,18 @@ public class Player_Brain : GenericFunctions, IUpdateable
 		}
 		_followCameraTimer = SetupTimer(cameraFollowTime, "Follow Camera Timer");
 	}
+	/// <summary>
+	/// Setups the event handlers for the body events
+	/// </summary>
+	void SetupHandlers()
+	{
+		_body.BodyEvents += BodyEventHandler;
+		_damageHandler.LifeChangedEvent += LifeChangedHandler;
+		_animControl.AnimationEvents += AnimationEventHandler;
+	}
+		#endregion
 
-	#region Input
+		#region Input
 	/// <summary>
 	/// reads input from the movement axises
 	/// </summary>
@@ -241,50 +258,45 @@ public class Player_Brain : GenericFunctions, IUpdateable
 			_body.StopJump();
 		}
 	}
-	#endregion
+		#endregion
 
-	#region EventHandlers
+		#region EventHandlers
 	/// <summary>
-	/// Setups the event handlers for the body events
+	/// Handles events from the body
 	/// </summary>
-	void SetupHandlers()
+	/// <param name="typeOfEvent"></param>
+	void BodyEventHandler(BodyEvent typeOfEvent)
 	{
-		_body.PlayerJumpedEvent += JumpEventHandler;
-		_body.PlayerClimbingEvent += ClimbEventHandler;
-		_body.PlayerLandedEvent += LandEventHandler;
-		_damageHandler.LifeChangedEvent += LifeChangedHandler;
-		_animControl.AnimationEvents += AnimationEventHandler;
+		switch (typeOfEvent)
+		{
+			case BodyEvent.LAND:
+			{
+				_flags[Flag.IS_GROUND] = true;
+				_flags[Flag.IS_JUMPING] = false;
+				break;
+			}
+			case BodyEvent.JUMP:
+			{
+				_flags[Flag.IS_JUMPING] = true;
+				_flags[Flag.IS_GROUND] = false;
+				break;
+			}
+			case BodyEvent.CLIMB:
+			{
+				_flags[Flag.IS_JUMPING] = false;
+				_flags[Flag.IS_CLIMBING] = true;
+				break;
+			}
+			case BodyEvent.TRIGGER:
+			{
+				_flags[Flag.IS_CLIMBING_TO_TOP] = true;
+				break;
+			}
+		}
 	}
 
 	/// <summary>
-	/// Handles the body event when the player jumps
-	/// </summary>
-	void JumpEventHandler()
-	{
-		_flags[Flag.IS_JUMPING] = true;
-		_flags[Flag.IS_GROUND] = false;
-	}
-
-	/// <summary>
-	/// Handles the body event when the player starts climbing
-	/// </summary>
-	void ClimbEventHandler()
-	{
-		_flags[Flag.IS_JUMPING] = false;
-		_flags[Flag.IS_CLIMBING] = true;
-	}
-
-	/// <summary>
-	/// Handles the body event when the player climbs
-	/// </summary>
-	void LandEventHandler()
-	{
-		_flags[Flag.IS_GROUND] = true;
-		_flags[Flag.IS_JUMPING] = false;
-	}
-
-	/// <summary>
-	/// Handles the damage_handler event for when the player's life has changed
+	/// Handles events from the damage_handler
 	/// </summary>
 	/// <param name="newLife"></param>
 	void LifeChangedHandler(float newLife)
@@ -295,12 +307,17 @@ public class Player_Brain : GenericFunctions, IUpdateable
 			_flags[Flag.IS_HIT] = true;
 		}
 	}
+
+	/// <summary>
+	/// Handles events from the timers
+	/// </summary>
+	/// <param name="ID"></param>
 	protected override void TimerFinishedHandler(string ID)
 	{
 	}
 
 	/// <summary>
-	/// Handles the animation script events
+	/// Handles events from the animation script
 	/// </summary>
 	/// <param name="typeOfEvent"></param>
 	void AnimationEventHandler(AnimationEvent typeOfEvent)
@@ -319,7 +336,7 @@ public class Player_Brain : GenericFunctions, IUpdateable
 			}
 		}
 	}
-	#endregion
+		#endregion
 
 	/// <summary>
 	/// Here goes everything to do when the player dies
@@ -373,6 +390,11 @@ public class Player_Brain : GenericFunctions, IUpdateable
 			}
 			case PlayerState.CLIMBING:
 			{
+				if (_flags[Flag.IS_CLIMBING_TO_TOP])
+				{
+					_flags[Flag.IS_CLIMBING_TO_TOP] = false;
+					return PlayerState.CLIMBING_TO_TOP;
+				}
 				if (_flags[Flag.IS_GROUND])
 				{
 					_flags[Flag.IS_GROUND] = false;
@@ -426,6 +448,7 @@ public class Player_Brain : GenericFunctions, IUpdateable
 		if (_followCameraTimer.Counting) return;
 		_followCameraTimer.GottaCount = true;
 	}
+
 	void UpdateForward()
 	{
 		float pivot = SmoothFormula(_followCameraTimer.CurrentTime, cameraFollowTime);
