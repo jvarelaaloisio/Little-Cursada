@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void BodyEvents();
+public delegate void BodyEvent();
 [RequireComponent(typeof(Rigidbody))]
 public class Player_Body : GenericFunctions, IUpdateable
 {
@@ -14,9 +14,9 @@ public class Player_Body : GenericFunctions, IUpdateable
 	#endregion
 
 	#region Public
-	public event BodyEvents PlayerJumpedEvent;
-	public event BodyEvents PlayerClimbingEvent;
-	public event BodyEvents PlayerLandedEvent;
+	public event BodyEvent PlayerJumpedEvent;
+	public event BodyEvent PlayerClimbingEvent;
+	public event BodyEvent PlayerLandedEvent;
 	#endregion
 
 	#region Serialized
@@ -211,7 +211,7 @@ public class Player_Body : GenericFunctions, IUpdateable
 		_RB = GetComponent<Rigidbody>();
 		_AnimControl = GetComponent<Player_Animator>();
 
-		InitalizeFlags();
+		SetupFlags();
 		InitializeTimers();
 	}
 	public void OnUpdate()
@@ -226,7 +226,7 @@ public class Player_Body : GenericFunctions, IUpdateable
 	/// <summary>
 	/// Setups the flags
 	/// </summary>
-	void InitalizeFlags()
+	void SetupFlags()
 	{
 		foreach (var flag in (Flag[])Enum.GetValues(typeof(Flag)))
 		{

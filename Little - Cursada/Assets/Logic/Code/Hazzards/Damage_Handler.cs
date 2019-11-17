@@ -55,5 +55,10 @@ public class Damage_Handler : GenericFunctions, IDamageable
 		lifePoints -= damage;
 		LifeChangedEvent?.Invoke(lifePoints);
 	}
+
+	public void FinishInmunity()
+	{
+		isInmune = false;
+	}
 	#endregion
 }
