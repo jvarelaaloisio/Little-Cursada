@@ -11,7 +11,7 @@ public class Player_Body : GenericFunctions, IUpdateable
 
 	#region Constants
 	[SerializeField]
-	LayerMask CLIMBABLE_TOP_LAYER;
+	const int CLIMBABLE_TOP_LAYER = 15;
 	#endregion
 
 	#region Public
@@ -206,7 +206,7 @@ public class Player_Body : GenericFunctions, IUpdateable
 		{
 			print(this.name + "update manager not found");
 		}
-		if(_uManager != null) _uManager.AddFixedItem(this);
+		if (_uManager != null) _uManager.AddFixedItem(this);
 		_RB = GetComponent<Rigidbody>();
 		_AnimControl = GetComponent<Player_Animator>();
 
@@ -374,7 +374,7 @@ public class Player_Body : GenericFunctions, IUpdateable
 		//-----------------------------------------------------------ACA--------------------------
 		else if (_flags[Flag.Climbing])
 		{
-			if(!_climbTimer.Counting) _climbTimer.GottaCount = true;
+			if (!_climbTimer.Counting) _climbTimer.GottaCount = true;
 		}
 	}
 
@@ -452,7 +452,7 @@ public class Player_Body : GenericFunctions, IUpdateable
 	#region Collisions
 	private void OnTriggerEnter(Collider other)
 	{
-		if(other.gameObject.layer == CLIMBABLE_TOP_LAYER)
+		if (other.gameObject.layer == CLIMBABLE_TOP_LAYER)
 		{
 			BodyEvents(BodyEvent.TRIGGER);
 		}

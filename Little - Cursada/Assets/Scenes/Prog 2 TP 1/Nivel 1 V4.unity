@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.5104578, g: 0.6323, b: 0.7738074, a: 1}
+  m_IndirectSpecularColor: {r: 0.5093655, g: 0.63252676, b: 0.77372295, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -760,6 +760,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1801838979}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (5)
@@ -815,10 +819,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -9002,6 +9002,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1627728825}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (2)
@@ -9061,10 +9065,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.60316455
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -15885,6 +15885,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1233627853}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (1)
@@ -15940,10 +15944,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -19656,6 +19656,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1233627853}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (3)
@@ -19711,10 +19715,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -21398,6 +21398,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1801838979}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (1)
@@ -21453,10 +21457,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -26070,6 +26070,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 204999534}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (5)
@@ -26125,10 +26129,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -26778,6 +26778,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 739996110}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (1)
@@ -26833,10 +26837,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -28136,6 +28136,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1801838979}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (4)
@@ -28191,10 +28195,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -28460,6 +28460,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1801838979}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (7)
@@ -28515,10 +28519,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -29435,6 +29435,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1627728825}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (1)
@@ -29490,10 +29494,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.9999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -33260,6 +33260,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1801838979}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (3)
@@ -33315,10 +33319,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -34543,6 +34543,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1233627853}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (2)
@@ -34598,10 +34602,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -35244,6 +35244,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1233627853}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (5)
@@ -35299,10 +35303,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -36418,8 +36418,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 924533430}
-  - component: {fileID: 924533433}
-  - component: {fileID: 924533432}
   - component: {fileID: 924533431}
   m_Layer: 12
   m_Name: Climbable Box 2 (1)
@@ -36457,51 +36455,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 4, z: 0.11}
   m_Center: {x: 0.03, y: 0, z: 0.15}
---- !u!23 &924533432
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924533429}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 43d0c49a51af0fa4b98f163a124ea47a, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &924533433
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924533429}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &924952052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38121,6 +38074,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 739996110}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (2)
@@ -38176,10 +38133,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -43754,6 +43707,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 204999534}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (4)
@@ -43809,10 +43766,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -48206,6 +48159,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1627728825}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (3)
@@ -48265,10 +48222,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7868
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -50830,6 +50783,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1233627853}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (7)
@@ -50885,10 +50842,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -52743,6 +52696,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1801838979}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (6)
@@ -52798,10 +52755,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -53400,6 +53353,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1233627853}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (4)
@@ -53455,10 +53412,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -61092,6 +61045,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 204999534}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (2)
@@ -61147,10 +61104,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -61878,6 +61831,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 204999534}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (6)
@@ -61933,10 +61890,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -64798,6 +64751,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 204999534}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (3)
@@ -64853,10 +64810,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -71087,6 +71040,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 204999534}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (7)
@@ -71142,10 +71099,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -73730,6 +73683,11 @@ PrefabInstance:
         type: 3}
       propertyPath: CLIMBABLE_TOP_LAYER.m_Bits
       value: 32768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106852306967436726, guid: 27b1b8dbd4208ee438b158efd4da6531,
+        type: 3}
+      propertyPath: CLIMBABLE_TOP_LAYER
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27b1b8dbd4208ee438b158efd4da6531, type: 3}
@@ -77044,6 +77002,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 924533430}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001
@@ -77103,10 +77065,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -80439,6 +80397,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1801838979}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (2)
@@ -80494,10 +80456,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -81873,6 +81831,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1233627853}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (6)
@@ -81928,10 +81890,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
@@ -82175,6 +82133,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 204999534}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547701196003618, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_Name
       value: Ivy_001 (1)
@@ -82230,10 +82192,6 @@ PrefabInstance:
     - target: {fileID: 4443161810018020, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db654e7fccc4241458049a7c4ea8cc07, type: 3}
