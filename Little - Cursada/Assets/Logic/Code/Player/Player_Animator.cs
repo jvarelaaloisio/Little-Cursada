@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[RequireComponent(typeof(Player_Body))]
+public delegate void AnimationEvents(AnimationEvent typeOfEvent);
+
 public class Player_Animator : MonoBehaviour, IUpdateable
 {
 	#region Variables
@@ -14,6 +15,10 @@ public class Player_Animator : MonoBehaviour, IUpdateable
 	speedY = "SpeedY",
 	speedZ = "SpeedZ",
 	animState = "State";
+	#endregion
+
+	#region Public
+	public event AnimationEvents AnimationEvents;
 	#endregion
 
 	#region Private
@@ -47,13 +52,20 @@ public class Player_Animator : MonoBehaviour, IUpdateable
 		}
 		try
 		{
-			_anim = GetComponentInChildren<Animator>();
+			_anim = GetComponent<Animator>();
 		}
 		catch (NullReferenceException)
 		{
 			print(this.name + "animator not found");
 		}
-		_body = GetComponent<Player_Body>();
+		try
+		{
+			_body = GetComponentInParent<Player_Body>();
+		}
+		catch (NullReferenceException)
+		{
+			print(this.name + "body not found");
+		}
 	}
 	public void OnUpdate()
 	{
@@ -62,6 +74,18 @@ public class Player_Animator : MonoBehaviour, IUpdateable
 	#endregion
 
 	#region Public
+
+	#region Events
+	public void HitFinished()
+	{
+		AnimationEvents?.Invoke(AnimationEvent.HIT_FINISHED);
+	}
+	public void ClimbFinished()
+	{
+		AnimationEvents?.Invoke(AnimationEvent.CLIMB_FINISHED);
+	}
+	#endregion
+
 	public void SetCrouch(bool Value)
 	{
 		_anim.SetBool(CrouchFlag, Value);

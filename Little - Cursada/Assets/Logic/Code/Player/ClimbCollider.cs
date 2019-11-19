@@ -26,6 +26,6 @@ public class ClimbCollider : MonoBehaviour
 	private void OnTriggerExit(Collider other)
 	{
 		_body.CollidingWithClimbable = false;
-	} 
+	}
 	#endregion
 }
