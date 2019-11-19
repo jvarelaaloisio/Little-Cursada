@@ -120,11 +120,11 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 0
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0
@@ -134,9 +134,10 @@ ModelImporter:
       curves: []
       events:
       - time: 0.7192062
-        functionName: Finished
+        functionName: ClimbFinished
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: a2649a526cb83944785b229159a8ffbe,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

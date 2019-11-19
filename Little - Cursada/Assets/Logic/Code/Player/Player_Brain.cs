@@ -289,7 +289,11 @@ public class Player_Brain : GenericFunctions, IUpdateable
 			}
 			case BodyEvent.TRIGGER:
 			{
-				_flags[Flag.IS_CLIMBING_TO_TOP] = true;
+				if (_state == PlayerState.CLIMBING)
+				{
+					_body.PushPlayer();
+					_flags[Flag.IS_CLIMBING_TO_TOP] = true;
+				}
 				break;
 			}
 		}
@@ -393,7 +397,8 @@ public class Player_Brain : GenericFunctions, IUpdateable
 				if (_flags[Flag.IS_CLIMBING_TO_TOP])
 				{
 					_flags[Flag.IS_CLIMBING_TO_TOP] = false;
-					return PlayerState.CLIMBING_TO_TOP;
+					//return PlayerState.CLIMBING_TO_TOP;
+					return PlayerState.JUMPING;
 				}
 				if (_flags[Flag.IS_GROUND])
 				{
@@ -409,6 +414,11 @@ public class Player_Brain : GenericFunctions, IUpdateable
 			}
 			case PlayerState.CLIMBING_TO_TOP:
 			{
+				if (_flags[Flag.IS_GROUND])
+				{
+					_flags[Flag.IS_GROUND] = false;
+					return PlayerState.WALKING;
+				}
 				if (_flags[Flag.IS_ON_TOP])
 				{
 					_flags[Flag.IS_ON_TOP] = false;

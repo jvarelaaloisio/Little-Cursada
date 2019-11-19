@@ -38,6 +38,11 @@ public class Pickable_Item : MonoBehaviour, IPickable
 	{
 		transform.parent = null;
 	}
+
+	public void Throw(float force, Vector3 Origin)
+	{
+
+	}
 	#endregion
 
 	#region Private

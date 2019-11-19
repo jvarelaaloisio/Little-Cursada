@@ -447,6 +447,13 @@ public class Player_Body : GenericFunctions, IUpdateable
 			_flags[Flag.Gliding] = false;
 		}
 	}
+
+	public void PushPlayer()
+	{
+		_RB.isKinematic = false;
+		_RB.AddForce(Vector3.up * _jumpForce + transform.forward, ForceMode.Impulse);
+
+	}
 	#endregion
 
 	#region Collisions
