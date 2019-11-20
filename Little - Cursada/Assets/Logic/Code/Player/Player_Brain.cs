@@ -28,6 +28,7 @@ public class Player_Brain : GenericFunctions, IUpdateable
 	Player_Body _body;
 	Damage_Handler _damageHandler;
 	Timer _followCameraTimer;
+	IPlayerInput input;
 	Vector2 _movInput;
 
 	#region Flags
@@ -94,13 +95,12 @@ public class Player_Brain : GenericFunctions, IUpdateable
 			case PlayerState.JUMPING:
 			{
 				ReadJumpingStateInput();
-				CheckIfJumpStops();
 				break;
 			}
 			case PlayerState.CLIMBING:
 			{
 				ReadClimbingStateInput();
-				ControlClimbInput();
+				ReadClimbInput();
 				break;
 			}
 			case PlayerState.CLIMBING_TO_TOP:
@@ -157,6 +157,7 @@ public class Player_Brain : GenericFunctions, IUpdateable
 		{
 			print(this.name + "anim script not found");
 		}
+		input = gameObject.AddComponent<DesktopInput>();
 		_followCameraTimer = SetupTimer(cameraFollowTime, "Follow Camera Timer");
 	}
 	/// <summary>
@@ -171,39 +172,24 @@ public class Player_Brain : GenericFunctions, IUpdateable
 		#endregion
 
 		#region Input
-	/// <summary>
-	/// reads input from the movement axises
-	/// </summary>
-	Vector2 ReadHorInput()
-	{
-		return new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-	}
 
 	/// <summary>
 	/// Tells the body to change the velocity in the horizontal plane
 	/// </summary>
 	void ControlHorMovement()
 	{
-		_movInput = ReadHorInput();
+		_movInput = input.ReadHorInput();
 		if (_movInput == Vector2.zero) return;
 		_body.Walk(_movInput);
 		UpdateForward();
 	}
 
 	/// <summary>
-	/// reads input to tell the body if the player wants to walk
-	/// </summary>
-	void ControlCrouchInput()
-	{
-		//_body.InputCrouch = Input.GetButton("Crouch");
-	}
-
-	/// <summary>
 	/// reads input to tell the body if the player wants to climb
 	/// </summary>
-	void ControlClimbInput()
+	void ReadClimbInput()
 	{
-		_body.InputClimb = Input.GetButton("Climb");
+		_body.InputClimb = input.ReadClimbInput();
 	}
 
 	/// <summary>
@@ -216,12 +202,8 @@ public class Player_Brain : GenericFunctions, IUpdateable
 		if (_movInput != Vector2.zero) FollowCameraRotation();
 
 		//Jump
-		if (Input.GetButton("Jump")) _body.InputJump = true;
-
-		//Crouch
-		ControlCrouchInput();
-
-		ControlClimbInput();
+		if (input.ReadJumpInput()) _body.InputJump = true;
+		ReadClimbInput();
 	}
 
 	/// <summary>
@@ -230,34 +212,20 @@ public class Player_Brain : GenericFunctions, IUpdateable
 	void ReadJumpingStateInput()
 	{
 		ControlHorMovement();
-		//REVISAR
-		if (_movInput != Vector2.zero) FollowCameraRotation();
 
-		//Glide
-		_body.InputGlide = Input.GetButton("Jump");
+		bool jumpInput = input.ReadJumpInput();
+		_body.InputGlide = jumpInput;
+		if(!jumpInput && _body.Velocity.y > 0) _body.StopJump();
 
-		//Crouch
-		ControlCrouchInput();
-
-		ControlClimbInput();
+		ReadClimbInput();
 	}
 
 	void ReadClimbingStateInput()
 	{
-		_movInput = ReadHorInput();
+		_movInput = input.ReadHorInput();
 		_body.Climb(_movInput);
 	}
 
-	/// <summary>
-	/// Checks if the player has stopped pressing the jump button
-	/// </summary>
-	void CheckIfJumpStops()
-	{
-		if (_body.Velocity.y > 0 && !Input.GetButton("Jump"))
-		{
-			_body.StopJump();
-		}
-	}
 		#endregion
 
 		#region EventHandlers

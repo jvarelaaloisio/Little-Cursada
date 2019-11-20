@@ -57,7 +57,6 @@ public class Player_Body : GenericFunctions, IUpdateable
 
 	ContactPoint lastContact;
 	Vector3 _collisionAngles;
-	float CrouchSpeedFactor => _flags[Flag.Crouching] ? _crouchSpeedMultiplier : 1;
 	float JumpingAccelerationFactor => _flags[Flag.IsInTheAir] ? _jumpingAcceleration : 1;
 	#endregion
 
@@ -124,21 +123,6 @@ public class Player_Body : GenericFunctions, IUpdateable
 			_flags[Flag.ClimbCollision] = value;
 		}
 	}
-	public bool InputCrouch
-	{
-		set
-		{
-			if (value)
-			{
-				_flags[Flag.Crouching] = true;
-				//AnimControl.SetCrouch(true);
-			}
-			else
-			{
-				_flags[Flag.Crouching] = false;
-			}
-		}
-	}
 	public bool InputClimb
 	{
 		set
@@ -169,7 +153,6 @@ public class Player_Body : GenericFunctions, IUpdateable
 		JumpInput,
 		GlideInput,
 		PlayerHoldingClimb,
-		Crouching,
 		Gliding,
 		Colliding,
 		ClimbCollision,
@@ -403,7 +386,7 @@ public class Player_Body : GenericFunctions, IUpdateable
 		Vector3 NewVel;
 		if (DecideIfWalk(Input))
 		{
-			NewVel = (transform.forward * Input.y + transform.right * Input.x) * Speed * CrouchSpeedFactor * JumpingAccelerationFactor + Vector3.up * _RB.velocity.y;
+			NewVel = (transform.forward * Input.y + transform.right * Input.x) * Speed * JumpingAccelerationFactor + Vector3.up * _RB.velocity.y;
 			_RB.velocity = NewVel;
 		}
 		else
