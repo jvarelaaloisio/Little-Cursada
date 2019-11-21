@@ -17,9 +17,10 @@ public class CameraBehaviour : GenericFunctions, IUpdateable
 	[SerializeField]
 	float YaxisMinAngle = -35, YaxisMaxAngle = 45;
 	[SerializeField]
-	[Range(0f, 10f)]
-	float xRotSpeed = 2.5f,
-		yRotSpeed = 5f,
+	[Range(0f, 20f)]
+	float sensitivityX = 2.5f,
+		sensitivityY = 5f,
+		joySensitivityRatio = 5,
 		rotationTime;
 	[SerializeField]
 	bool yAxisInverted, xAxisInverted;
@@ -207,7 +208,7 @@ public class CameraBehaviour : GenericFunctions, IUpdateable
 				{
 					if (_flags[Flag.IS_CAMERA_INPUT]) return State.FOLLOWING;
 					else return State.FREE;
-				}				
+				}
 				break;
 			}
 		}
@@ -222,17 +223,10 @@ public class CameraBehaviour : GenericFunctions, IUpdateable
 	{
 		if (!_flags[Flag.IS_CAMERA_INPUT]) return;
 		//Y axis rotation setup
-		YAngleController += Values.y * yRotSpeed / 360 * YAxisInvertedMultiplier;
+		YAngleController += Values.y * sensitivityY / 360 * YAxisInvertedMultiplier;
 
 		//Rotate X Axis setup
-		XAngleController += Values.x * xRotSpeed * XAxisInvertedMultiplier;
-
-		/*if (!_rotationTimer.Counting)
-		{
-			print("COUNT");
-			_rotationTimer.GottaCount = true;
-		}*/
-		//transform.eulerAngles = new Vector3(Mathf.Lerp(YaxisMinAngle, YaxisMaxAngle, YAngleController), XAngleController, transform.rotation.z);
+		XAngleController += Values.x * sensitivityX * XAxisInvertedMultiplier;
 	}
 
 	void Rotate()
@@ -261,7 +255,7 @@ public class CameraBehaviour : GenericFunctions, IUpdateable
 	{
 		float x = cameraTransform.position.y - transform.position.y;
 		Vector3 result = originalPosition;
-		if(x < 0)
+		if (x < 0)
 		{
 			result.y = Mathf.Sqrt(Mathf.Pow(sphereRadius, 2) + Mathf.Pow(x, 2));
 		}
@@ -278,7 +272,7 @@ public class CameraBehaviour : GenericFunctions, IUpdateable
 	void ReadInput()
 	{
 		_mouseInput = new Vector2(Input.GetAxis(_mouseXaxis), Input.GetAxis(_mouseYaxis));
-		_joyInput = new Vector2(Input.GetAxis(_joyXaxis), Input.GetAxis(_joyYaxis));
+		_joyInput = new Vector2(Input.GetAxis(_joyXaxis), Input.GetAxis(_joyYaxis)) * joySensitivityRatio;
 		_flags[Flag.IS_CAMERA_INPUT] = (_mouseInput != Vector2.zero || _joyInput != Vector2.zero);
 		if (_mouseInput != Vector2.zero) UpdateRotation(_mouseInput);
 		if (_joyInput != Vector2.zero) UpdateRotation(_joyInput);
