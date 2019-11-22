@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.5104578, g: 0.6323, b: 0.7738074, a: 1}
+  m_IndirectSpecularColor: {r: 0.50604093, g: 0.63530153, b: 0.7726004, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17220,6 +17220,10 @@ PrefabInstance:
     - target: {fileID: 1169428895900776, guid: 32a8051169a6cc849984caa04b9fe6db, type: 3}
       propertyPath: m_Name
       value: PS_GodRays (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1169428895900776, guid: 32a8051169a6cc849984caa04b9fe6db, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4751758959396382, guid: 32a8051169a6cc849984caa04b9fe6db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -50769,7 +50773,7 @@ PrefabInstance:
     - target: {fileID: 2355647545623062745, guid: eb3cbb90e4f2f75419b224c9b58dd1d8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -377.81
+      value: -377.977
       objectReference: {fileID: 0}
     - target: {fileID: 2355647545623062745, guid: eb3cbb90e4f2f75419b224c9b58dd1d8,
         type: 3}
@@ -50779,7 +50783,7 @@ PrefabInstance:
     - target: {fileID: 2355647545623062745, guid: eb3cbb90e4f2f75419b224c9b58dd1d8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 73.51
+      value: 73.648
       objectReference: {fileID: 0}
     - target: {fileID: 2355647545623062745, guid: eb3cbb90e4f2f75419b224c9b58dd1d8,
         type: 3}
@@ -50840,6 +50844,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2355647545623062744, guid: eb3cbb90e4f2f75419b224c9b58dd1d8,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 2355647545623062744, guid: eb3cbb90e4f2f75419b224c9b58dd1d8,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2355647545623062744, guid: eb3cbb90e4f2f75419b224c9b58dd1d8,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356947581497116556, guid: eb3cbb90e4f2f75419b224c9b58dd1d8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356947581346142999, guid: eb3cbb90e4f2f75419b224c9b58dd1d8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356947581081165033, guid: eb3cbb90e4f2f75419b224c9b58dd1d8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356947579840997557, guid: eb3cbb90e4f2f75419b224c9b58dd1d8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb3cbb90e4f2f75419b224c9b58dd1d8, type: 3}
@@ -65233,6 +65272,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_003 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1642476699966498, guid: 13a914e4c19037848979eadba759fefb, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4931605068772014, guid: 13a914e4c19037848979eadba759fefb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -339.4
@@ -69363,6 +69406,10 @@ PrefabInstance:
     - target: {fileID: 1169428895900776, guid: 32a8051169a6cc849984caa04b9fe6db, type: 3}
       propertyPath: m_Name
       value: PS_GodRays
+      objectReference: {fileID: 0}
+    - target: {fileID: 1169428895900776, guid: 32a8051169a6cc849984caa04b9fe6db, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4751758959396382, guid: 32a8051169a6cc849984caa04b9fe6db, type: 3}
       propertyPath: m_LocalPosition.x

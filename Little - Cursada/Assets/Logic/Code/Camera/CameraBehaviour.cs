@@ -272,7 +272,7 @@ public class CameraBehaviour : GenericFunctions, IUpdateable
 	void ReadInput()
 	{
 		_mouseInput = new Vector2(Input.GetAxis(_mouseXaxis), Input.GetAxis(_mouseYaxis));
-		_joyInput = new Vector2(Input.GetAxis(_joyXaxis), Input.GetAxis(_joyYaxis)) * joySensitivityRatio;
+		_joyInput = new Vector2(Input.GetAxis(_joyXaxis), -Input.GetAxis(_joyYaxis)) * joySensitivityRatio;
 		_flags[Flag.IS_CAMERA_INPUT] = (_mouseInput != Vector2.zero || _joyInput != Vector2.zero);
 		if (_mouseInput != Vector2.zero) UpdateRotation(_mouseInput);
 		if (_joyInput != Vector2.zero) UpdateRotation(_joyInput);
