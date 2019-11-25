@@ -5,9 +5,9 @@ public interface IPickable
 	void Release();
 
 	/// <summary>
-	/// Throw the object with an explosive force
+	/// Throw the object
 	/// </summary>
 	/// <param name="force">amount of force</param>
-	/// <param name="Origin">position of the thrower</param>
-	void Throw(float force, Vector3 Origin);
+	/// <param name="direction">direction wich the object is thrown</param>
+	void Throw(float force, Vector3 direction);
 }

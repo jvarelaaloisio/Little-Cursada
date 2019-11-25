@@ -19,14 +19,21 @@ public class Player_Brain : GenericFunctions, IUpdateable
 	[SerializeField]
 	[Range(0, 5)]
 	float cameraFollowTime = 0.5f;
+	[SerializeField]
+	float throwForce = 8;
 	#endregion
 
 	#region Private
+
+	#region Other Objects
 	GameManager _manager;
 	UpdateManager _uManager;
 	Player_Animator _animControl;
 	Player_Body _body;
 	Damage_Handler _damageHandler;
+	IPickable _itemPicked;
+	#endregion
+
 	Timer _followCameraTimer;
 	IPlayerInput input;
 	Vector2 _movInput;
@@ -90,11 +97,13 @@ public class Player_Brain : GenericFunctions, IUpdateable
 			case PlayerState.WALKING:
 			{
 				ReadWalkingStateInput();
+				ReadPickInput();
 				break;
 			}
 			case PlayerState.JUMPING:
 			{
 				ReadJumpingStateInput();
+				ReadPickInput();
 				break;
 			}
 			case PlayerState.CLIMBING:
@@ -130,7 +139,7 @@ public class Player_Brain : GenericFunctions, IUpdateable
 
 	#region Private
 
-		#region Setup
+	#region Setup
 	/// <summary>
 	/// Setups the flags
 	/// </summary>
@@ -169,9 +178,9 @@ public class Player_Brain : GenericFunctions, IUpdateable
 		_damageHandler.LifeChangedEvent += LifeChangedHandler;
 		_animControl.AnimationEvents += AnimationEventHandler;
 	}
-		#endregion
+	#endregion
 
-		#region Input
+	#region Input
 
 	/// <summary>
 	/// Tells the body to change the velocity in the horizontal plane
@@ -190,6 +199,31 @@ public class Player_Brain : GenericFunctions, IUpdateable
 	void ReadClimbInput()
 	{
 		_body.InputClimb = input.ReadClimbInput();
+	}
+
+	void ReadPickInput()
+	{
+		if (input.ReadPickInput())
+		{
+			if (_itemPicked == null)
+			{
+				_itemPicked = GetComponentInChildren<ClimbCollider>().PickableItem;
+				if (_itemPicked != null)
+				{
+					_itemPicked.Pick(transform);
+				}
+			}
+			else
+			{
+				_itemPicked.Release();
+				_itemPicked = null;
+			}
+		}
+		if (input.ReadThrowInput() && _itemPicked != null)
+		{
+			_itemPicked.Throw(throwForce, transform.forward);
+			_itemPicked = null;
+		}
 	}
 
 	/// <summary>
@@ -215,7 +249,7 @@ public class Player_Brain : GenericFunctions, IUpdateable
 
 		bool jumpInput = input.ReadJumpInput();
 		_body.InputGlide = jumpInput;
-		if(!jumpInput && _body.Velocity.y > 0) _body.StopJump();
+		if (!jumpInput && _body.Velocity.y > 0) _body.StopJump();
 
 		ReadClimbInput();
 	}
@@ -226,9 +260,9 @@ public class Player_Brain : GenericFunctions, IUpdateable
 		_body.Climb(_movInput);
 	}
 
-		#endregion
+	#endregion
 
-		#region EventHandlers
+	#region EventHandlers
 	/// <summary>
 	/// Handles events from the body
 	/// </summary>
@@ -308,7 +342,7 @@ public class Player_Brain : GenericFunctions, IUpdateable
 			}
 		}
 	}
-		#endregion
+	#endregion
 
 	/// <summary>
 	/// Here goes everything to do when the player dies

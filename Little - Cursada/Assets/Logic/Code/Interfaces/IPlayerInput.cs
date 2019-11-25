@@ -16,4 +16,14 @@ public interface IPlayerInput
 	/// </summary>
 	/// <returns></returns>
 	bool ReadJumpInput();
+	/// <summary>
+	/// Returns true if the player is pressing the pick button
+	/// </summary>
+	/// <returns></returns>
+	bool ReadPickInput();
+	/// <summary>
+	/// Returns true if the player is pressing the throw button
+	/// </summary>
+	/// <returns></returns>
+	bool ReadThrowInput();
 }

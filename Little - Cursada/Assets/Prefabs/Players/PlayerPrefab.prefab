@@ -54,7 +54,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GodMode: 0
-  cameraFollowTime: 0.5
+  cameraFollowTime: 2
+  throwForce: 8
+  throwRadius: 1
   _state: 0
 --- !u!114 &4106852306967436726
 MonoBehaviour:

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.50604093, g: 0.63530153, b: 0.7726004, a: 1}
+  m_IndirectSpecularColor: {r: 0.5068133, g: 0.6353805, b: 0.77264005, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -72356,16 +72356,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4106852306967436726, guid: 27b1b8dbd4208ee438b158efd4da6531,
-        type: 3}
-      propertyPath: CLIMBABLE_TOP_LAYER.m_Bits
-      value: 32768
-      objectReference: {fileID: 0}
-    - target: {fileID: 4106852306967436726, guid: 27b1b8dbd4208ee438b158efd4da6531,
-        type: 3}
-      propertyPath: CLIMBABLE_TOP_LAYER
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27b1b8dbd4208ee438b158efd4da6531, type: 3}

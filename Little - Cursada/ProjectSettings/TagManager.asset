@@ -21,7 +21,7 @@ TagManager:
   - PlayerClimbCollider
   - PlayerFeetCollider
   - ClimbableTop
-  - 
+  - Pickable
   - 
   - 
   - 

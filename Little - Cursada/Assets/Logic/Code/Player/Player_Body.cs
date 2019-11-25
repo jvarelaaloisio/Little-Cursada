@@ -123,6 +123,17 @@ public class Player_Body : GenericFunctions, IUpdateable
 			_flags[Flag.ClimbCollision] = value;
 		}
 	}
+	public bool CollidingWithPickable
+	{
+		get
+		{
+			return _flags[Flag.PickableCollision];
+		}
+		set
+		{
+			_flags[Flag.PickableCollision] = value;
+		}
+	}
 	public bool InputClimb
 	{
 		set
@@ -159,7 +170,8 @@ public class Player_Body : GenericFunctions, IUpdateable
 		ColCounting,
 		WeirdColCounting,
 		Climbing,
-		InCoyoteTime
+		InCoyoteTime,
+		PickableCollision
 	}
 	Dictionary<Flag, bool> _flags = new Dictionary<Flag, bool>();
 

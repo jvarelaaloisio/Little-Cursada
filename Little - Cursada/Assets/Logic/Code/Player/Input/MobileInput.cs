@@ -72,6 +72,16 @@ public class MobileInput : MonoBehaviour, IPlayerInput, IUpdateable
 		throw new System.NotImplementedException();
 	}
 
-	
+	public bool ReadPickInput()
+	{
+		throw new NotImplementedException();
+	}
+
+	public bool ReadThrowInput()
+	{
+		throw new NotImplementedException();
+	}
+
+
 	#endregion
 }
