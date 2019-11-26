@@ -7,9 +7,7 @@ public class Wind : MonoBehaviour
 {
 	#region Variables
 
-	#region Public
-	[SerializeField]
-	Vector3 direction;
+	#region Serialized
 	[SerializeField]
 	float force;
 	#endregion
@@ -25,21 +23,21 @@ public class Wind : MonoBehaviour
 	#endregion
 
 	#region Collisions
-	//private void OnTriggerEnter(Collider other)
-	//{
-	//	if (!_isOn) return;
-	//	IBody characterBody = other.GetComponent<IBody>();
-	//	if (characterBody == null) return;
-	//	characterBody.Push(direction, force);
-	//	//_particles.Stop();
-	//	//_isOn = false;
-	//}
 	private void OnTriggerStay(Collider other)
 	{
 		IBody characterBody = other.GetComponent<IBody>();
 		if (characterBody == null) return;
-		print("push");
 		characterBody.Push(transform.up, force);
+	}
+	#endregion
+
+	#region Gizmos
+	private void OnDrawGizmos()
+	{
+		Vector3 pos = GetComponentInChildren<ParticleSystem>().transform.position;
+		Gizmos.color = Color.blue;
+		Gizmos.DrawWireSphere(pos, .5f);
+		Gizmos.DrawLine(pos, pos + transform.up * transform.localScale.y);
 	}
 	#endregion
 }
