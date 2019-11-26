@@ -5,7 +5,7 @@ using UnityEngine;
 
 public delegate void BodyEvents(BodyEvent typeOfEvent);
 [RequireComponent(typeof(Rigidbody))]
-public class Player_Body : GenericFunctions, IUpdateable
+public class Player_Body : GenericFunctions, IUpdateable, IBody
 {
 	#region Variables
 
@@ -449,6 +449,10 @@ public class Player_Body : GenericFunctions, IUpdateable
 		_RB.AddForce(Vector3.up * _jumpForce + transform.forward, ForceMode.Impulse);
 
 	}
+	public void Push(Vector3 direction, float force)
+	{
+		_RB.AddForce(direction.normalized * force, ForceMode.Force);
+	}
 	#endregion
 
 	#region Collisions
@@ -473,5 +477,6 @@ public class Player_Body : GenericFunctions, IUpdateable
 			_colTimer.GottaCount = true;
 		}
 	}
+
 	#endregion
 }

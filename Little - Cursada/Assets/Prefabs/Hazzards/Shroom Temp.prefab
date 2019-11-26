@@ -4810,7 +4810,7 @@ MonoBehaviour:
   damageTimeToOn: 3
   damageTimeToOff: 3
   ticTime: 0.5
-  particles: {fileID: 0}
+  particles: {fileID: 3007528433385208190}
 --- !u!135 &5142663254674741161
 SphereCollider:
   m_ObjectHideFlags: 0

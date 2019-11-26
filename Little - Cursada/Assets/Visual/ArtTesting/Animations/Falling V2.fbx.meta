@@ -78,7 +78,7 @@ ModelImporter:
     2100004: 04 - Default
     2100006: 07 - Default
     4300000: Cuerpo
-    7400000: Falling
+    7400000: Falling (old)
     9500000: //RootNode
     13700000: Cuerpo
   externalObjects: {}
@@ -110,7 +110,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Falling
+      name: Falling (old)
       takeName: mixamo.com
       firstFrame: 0
       lastFrame: 154

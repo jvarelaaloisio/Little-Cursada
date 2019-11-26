@@ -26,7 +26,6 @@ public class Reward_Father : EnumeratorManager
 
 	protected virtual void AddReward(Player_Rewards player)
 	{
-		print("ADD REWARD " + kindOfReward);
 		player.GetReward(kindOfReward);
 	}
 	#endregion

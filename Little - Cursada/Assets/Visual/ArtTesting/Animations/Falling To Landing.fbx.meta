@@ -78,7 +78,7 @@ ModelImporter:
     2100004: 04 - Default
     2100006: 07 - Default
     4300000: Cuerpo
-    7400000: Land
+    7400000: Land (old)
     9500000: //RootNode
     13700000: Cuerpo
     2186277476908879412: ImportLogs
@@ -111,7 +111,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Land
+      name: Land (old)
       takeName: mixamo.com
       firstFrame: 20
       lastFrame: 32
