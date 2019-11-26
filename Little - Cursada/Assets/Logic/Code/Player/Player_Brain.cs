@@ -84,7 +84,7 @@ public class Player_Brain : GenericFunctions, IUpdateable
 		{
 			print(this.name + "game manager not found");
 		}
-		SetupVariables();
+		InitializeVariables();
 		SetupHandlers();
 		SetupFlags();
 	}
@@ -154,7 +154,7 @@ public class Player_Brain : GenericFunctions, IUpdateable
 	/// <summary>
 	/// Called in the start to prepeare this script
 	/// </summary>
-	void SetupVariables()
+	void InitializeVariables()
 	{
 		_body = GetComponent<Player_Body>();
 		_damageHandler = GetComponent<Damage_Handler>();
@@ -458,7 +458,8 @@ public class Player_Brain : GenericFunctions, IUpdateable
 	void FollowCameraRotation()
 	{
 		if (_followCameraTimer.Counting) return;
-		_followCameraTimer.GottaCount = true;
+		_followCameraTimer.Play();
+		//_followCameraTimer.GottaCount = true;
 	}
 
 	void UpdateForward()

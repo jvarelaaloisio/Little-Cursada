@@ -190,7 +190,8 @@ public class CameraBehaviour : GenericFunctions, IUpdateable
 			{
 				if (_flags[Flag.IS_CAMERA_INPUT])
 				{
-					_rotationTimer.GottaCount = true;
+					_rotationTimer.Play();
+					//_rotationTimer.GottaCount = true;
 					_initialPosCamera.x = transform.eulerAngles.x;
 					_initialPosCamera.y = transform.eulerAngles.y;
 					return State.FOLLOWING_SMOOTHLY;

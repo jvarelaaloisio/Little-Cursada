@@ -51,7 +51,11 @@ public class Damage_Handler : GenericFunctions, IDamageable
 	{
 		if (isInmune) return;
 		isInmune = true;
-		if(!_inmunityTimer.Counting) _inmunityTimer.GottaCount = true;
+		if (!_inmunityTimer.Counting)
+		{
+			_inmunityTimer.Play();
+			//_inmunityTimer.GottaCount = true;
+		}
 		lifePoints -= damage;
 		LifeChangedEvent?.Invoke(lifePoints);
 	}

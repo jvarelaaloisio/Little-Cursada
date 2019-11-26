@@ -14,24 +14,32 @@ public class Wind : MonoBehaviour
 	float force;
 	#endregion
 
-
 	#endregion
 
 	#region Unity
-	void Awake()
+	void Start()
 	{
 		GetComponent<Collider>().isTrigger = true;
+		GetComponentInChildren<ParticleSystem>().Play();
 	}
 	#endregion
 
 	#region Collisions
-	private void OnTriggerEnter(Collider other)
+	//private void OnTriggerEnter(Collider other)
+	//{
+	//	if (!_isOn) return;
+	//	IBody characterBody = other.GetComponent<IBody>();
+	//	if (characterBody == null) return;
+	//	characterBody.Push(direction, force);
+	//	//_particles.Stop();
+	//	//_isOn = false;
+	//}
+	private void OnTriggerStay(Collider other)
 	{
 		IBody characterBody = other.GetComponent<IBody>();
-		if(characterBody != null)
-		{
-			characterBody.Push(direction, force);
-		}
+		if (characterBody == null) return;
+		print("push");
+		characterBody.Push(transform.up, force);
 	}
 	#endregion
 }

@@ -104,14 +104,16 @@ public class Player_Body : GenericFunctions, IUpdateable, IBody
 				}
 				if (_flags[Flag.InCoyoteTime])
 				{
-					_coyoteTimer.GottaCount = false;
+					_coyoteTimer.Stop();
+					//_coyoteTimer.GottaCount = false;
 					_flags[Flag.InCoyoteTime] = false;
 				}
 				Glide(false);
 			}
 			else if (!_flags[Flag.InCoyoteTime] && !_flags[Flag.IsInTheAir])
 			{
-				_coyoteTimer.GottaCount = true;
+				_coyoteTimer.Play();
+				//_coyoteTimer.GottaCount = true;
 				_flags[Flag.InCoyoteTime] = true;
 			}
 		}
@@ -321,7 +323,8 @@ public class Player_Body : GenericFunctions, IUpdateable, IBody
 
 				//Event
 				BodyEvents?.Invoke(BodyEvent.JUMP);
-				_jumpTimer.GottaCount = true;
+				_jumpTimer.Play();
+				//_jumpTimer.GottaCount = true;
 
 				//Sound
 				PlaySound(0);
@@ -358,7 +361,8 @@ public class Player_Body : GenericFunctions, IUpdateable, IBody
 	{
 		if (_flags[Flag.PlayerHoldingClimb] && _flags[Flag.ClimbCollision])
 		{
-			_climbTimer.GottaCount = false;
+			_climbTimer.Stop();
+			//_climbTimer.GottaCount = false;
 			if (_flags[Flag.Climbing]) return;
 			_flags[Flag.Climbing] = true;
 			_RB.isKinematic = true;
@@ -369,7 +373,40 @@ public class Player_Body : GenericFunctions, IUpdateable, IBody
 		//-----------------------------------------------------------ACA--------------------------
 		else if (_flags[Flag.Climbing])
 		{
-			if (!_climbTimer.Counting) _climbTimer.GottaCount = true;
+			if (!_climbTimer.Counting)
+			{
+				_climbTimer.Play();
+				//_climbTimer.GottaCount = true;
+			}
+		}
+	}
+
+	/// <summary>
+	/// Turn on and off the gliding
+	/// </summary>
+	/// <param name="HoldingButton"></param>
+	void Glide(bool HoldingButton)
+	{
+		//if (HoldingButton)
+		//{
+		//	if (_RB.velocity.y < 0 && _flags[Flag.IsInTheAir] && !_flags[Flag.Gliding])
+		//	{
+		//		_RB.drag = _glidingDrag;
+		//		_flags[Flag.Gliding] = true;
+		//	}
+		//}
+		if (HoldingButton && _RB.velocity.y < 0 && _flags[Flag.IsInTheAir])
+		{
+			if (!_flags[Flag.Gliding])
+			{
+				_RB.drag = _glidingDrag;
+				_flags[Flag.Gliding] = true;
+			}
+		}
+		else
+		{
+			_RB.drag = 0;
+			_flags[Flag.Gliding] = false;
 		}
 	}
 
@@ -422,27 +459,6 @@ public class Player_Body : GenericFunctions, IUpdateable, IBody
 		_RB.velocity += Vector3.up * Physics2D.gravity.y * (_lowJumpMultiplier - 1) * Time.deltaTime;
 	}
 
-	/// <summary>
-	/// Turn on and off the gliding
-	/// </summary>
-	/// <param name="HoldingButton"></param>
-	public void Glide(bool HoldingButton)
-	{
-		if (HoldingButton)
-		{
-			if (_RB.velocity.y < 0 && _flags[Flag.IsInTheAir] && !_flags[Flag.Gliding])
-			{
-				_RB.drag = _glidingDrag;
-				_flags[Flag.Gliding] = true;
-			}
-		}
-		else
-		{
-			_RB.drag = 0;
-			_flags[Flag.Gliding] = false;
-		}
-	}
-
 	public void PushPlayer()
 	{
 		_RB.isKinematic = false;
@@ -451,7 +467,7 @@ public class Player_Body : GenericFunctions, IUpdateable, IBody
 	}
 	public void Push(Vector3 direction, float force)
 	{
-		_RB.AddForce(direction.normalized * force, ForceMode.Force);
+		_RB.AddForce(direction.normalized * force, ForceMode.Impulse);
 	}
 	#endregion
 
@@ -474,7 +490,8 @@ public class Player_Body : GenericFunctions, IUpdateable, IBody
 	{
 		if (_flags[Flag.Colliding])
 		{
-			_colTimer.GottaCount = true;
+			_colTimer.Play();
+			//_colTimer.GottaCount = true;
 		}
 	}
 

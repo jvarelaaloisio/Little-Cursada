@@ -12,17 +12,6 @@ public class Timer : MonoBehaviour, IUpdateable
 	public event ClockTicking ClockTickingEvent;
 	#endregion
 
-	#region Setters
-	public bool GottaCount
-	{
-		set
-		{
-			_counting = value;
-			_currentTime = 0;
-		}
-	}
-	#endregion
-
 	#region Getters
 	public bool Counting
 	{
@@ -77,11 +66,23 @@ public class Timer : MonoBehaviour, IUpdateable
 			_counting = false;
 			_currentTime = 0;
 			ClockTickingEvent(_id);
+			_uManager.RemoveItem(this);
 		}
 	}
 	#endregion
 
 	#region Public
+	public void Play()
+	{
+		_uManager.AddItem(this);
+		_counting = true;
+		_currentTime = 0;
+	}
+	public void Stop()
+	{
+		_counting = false;
+		_currentTime = 0;
+	}
 	public void Instantiate(float newTotalTime, string newID)
 	{
 		_totalTime = newTotalTime;

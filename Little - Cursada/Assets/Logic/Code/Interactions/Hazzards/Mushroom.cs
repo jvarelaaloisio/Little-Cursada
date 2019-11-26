@@ -30,7 +30,8 @@ public class Mushroom : Hazzard
 		_collider = GetComponent<SphereCollider>();
 		_collider.enabled = false;
 		InitializeTimers();
-		_damageTurnOnTimer.GottaCount = true;
+		_damageTurnOnTimer.Play();
+		//_damageTurnOnTimer.GottaCount = true;
 	}
 	#endregion
 
@@ -52,23 +53,28 @@ public class Mushroom : Hazzard
 			case "Damage On Timer":
 			{
 				_collider.enabled = true;
-				_ticTimer.GottaCount = true;
-				_damageTurnOffTimer.GottaCount = true;
+				_ticTimer.Play();
+				//_ticTimer.GottaCount = true;
+				_damageTurnOffTimer.Play();
+				//_damageTurnOffTimer.GottaCount = true;
 				particles.Play();
 				break;
 			}
 			case "Damage Off Timer":
 			{
 				if(_damageables.Count <= 0) _collider.enabled = false;
-				_ticTimer.GottaCount = false;
-				_damageTurnOnTimer.GottaCount = true;
+				_ticTimer.Stop();
+				//_ticTimer.GottaCount = false;
+				_damageTurnOnTimer.Play();
+				//_damageTurnOnTimer.GottaCount = true;
 				particles.Stop();
 				break;
 			}
 			case "Tic Timer":
 			{
 				Attack();
-				_ticTimer.GottaCount = true;
+				_ticTimer.Play();
+				//_ticTimer.GottaCount = true;
 				break;
 			}
 		}
