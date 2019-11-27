@@ -16,6 +16,7 @@ public class Player_Body : GenericFunctions, IUpdateable, IBody
 
 	#region Public
 	public event BodyEvents BodyEvents;
+    public Transform lastClimbable;
 	#endregion
 
 	#region Serialized
@@ -54,6 +55,7 @@ public class Player_Body : GenericFunctions, IUpdateable, IBody
 	Player_Animator _AnimControl;
 	AudioManager _audioManager;
 	Timer _colTimer, _coyoteTimer, _jumpTimer, _climbTimer;
+
 
 	ContactPoint lastContact;
 	Vector3 _collisionAngles;
@@ -445,10 +447,11 @@ public class Player_Body : GenericFunctions, IUpdateable, IBody
 		_RB.velocity = NewVel;
 	}
 
-	public void Climb(Vector2 Input)
-	{
-		if (!_flags[Flag.Climbing]) return;
-		transform.position += (transform.right * Input.x + transform.up * Input.y) * _climbSpeed * Time.deltaTime;
+    public void Climb(Vector2 Input)
+    {
+        if (!_flags[Flag.Climbing]) return;
+        transform.forward = lastClimbable.forward;
+        transform.position += (transform.right * Input.x + transform.up * Input.y) * _climbSpeed * Time.deltaTime;
 	}
 
 	/// <summary>
@@ -467,6 +470,7 @@ public class Player_Body : GenericFunctions, IUpdateable, IBody
 	}
 	public void Push(Vector3 direction, float force)
 	{
+        Glide(false); 
 		_RB.AddForce(direction.normalized * force, ForceMode.Impulse);
 	}
 	#endregion

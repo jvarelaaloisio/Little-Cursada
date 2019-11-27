@@ -28,12 +28,11 @@ public class Damage_Handler : GenericFunctions, IDamageable
 			return isInmune;
 		}
 	}
-	#endregion
+    #endregion
+    #endregion
 
-	#endregion
-
-	#region Unity
-	private void Start()
+    #region Unity
+    private void Start()
 	{
 		_inmunityTimer = SetupTimer(inmunityTime, "Inmunity Timer");
 	}

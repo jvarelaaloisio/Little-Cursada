@@ -40,7 +40,7 @@ public class Pickable_Item : MonoBehaviour, IPickable
 
 	public void Release()
 	{
-		transform.position = _picker.position + _picker.forward + _picker.up;
+        if(_picker) transform.position = _picker.position + _picker.forward + _picker.up;
 		transform.SetParent(_originalFather);
 		_rb.isKinematic = false;
 	}

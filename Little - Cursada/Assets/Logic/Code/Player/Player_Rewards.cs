@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Player_Rewards : EnumeratorManager, IUpdateable
+public class Player_Rewards : EnumeratorManager
 {
 	#region Public
 	public int levelAmount;
@@ -23,8 +23,6 @@ public class Player_Rewards : EnumeratorManager, IUpdateable
 	#endregion
 
 	#region Private
-	GameManager Manager;
-	UpdateManager _uManager;
 	int _actualLevel;
 	int[] _coinsPerLevel;
 	int[] _moonsPerLevel;
@@ -38,33 +36,7 @@ public class Player_Rewards : EnumeratorManager, IUpdateable
 	private void Awake()
 	{
 		_actualLevel = SceneManager.GetActiveScene().buildIndex;
-		Manager = GameObject.FindObjectOfType<GameManager>();
-		try
-		{
-			_uManager = GameObject.FindObjectOfType<UpdateManager>();
-			_uManager.AddItem(this);
-		}
-		catch (NullReferenceException)
-		{
-			print(this.name + "update manager not found");
-		}
 		InitializeArrays(levelAmount);
-	}
-
-	public void OnUpdate()
-	{
-		if (coinsText != null)
-		{
-			coinsText.text = _coinsPerLevel[_actualLevel].ToString();
-		}
-		if (moonsText != null)
-		{
-			moonsText.text = _moonsPerLevel[_actualLevel].ToString();
-		}
-		if (specialsText != null)
-		{
-			specialsText.text = specialCount.ToString();
-		}
 	}
 
 	#endregion
@@ -74,10 +46,6 @@ public class Player_Rewards : EnumeratorManager, IUpdateable
 	{
 		_coinsPerLevel = new int[amount];
 		_moonsPerLevel = new int[amount];
-	}
-	void UpdateTimers()
-	{
-
 	}
 	#endregion
 
@@ -107,7 +75,19 @@ public class Player_Rewards : EnumeratorManager, IUpdateable
 				specialCount += 1;
 				break;
 			}
-		}
-	}
+        }
+        if (coinsText != null)
+        {
+            coinsText.text = _coinsPerLevel[_actualLevel].ToString();
+        }
+        if (moonsText != null)
+        {
+            moonsText.text = _moonsPerLevel[_actualLevel].ToString();
+        }
+        if (specialsText != null)
+        {
+            specialsText.text = specialCount.ToString();
+        }
+    }
 	#endregion
 }
