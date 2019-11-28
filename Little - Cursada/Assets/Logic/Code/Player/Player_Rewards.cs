@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 
 public class Player_Rewards : EnumeratorManager
 {
@@ -23,30 +18,10 @@ public class Player_Rewards : EnumeratorManager
 	#endregion
 
 	#region Private
-	int _actualLevel;
-	int[] _coinsPerLevel;
-	int[] _moonsPerLevel;
-	//bool[] _specialAdded;
-	//float[] _specialTimer;
+	int _coins;
+	int _moons;
 
 	int specialCount;
-	#endregion
-
-	#region Unity
-	private void Awake()
-	{
-		_actualLevel = SceneManager.GetActiveScene().buildIndex;
-		InitializeArrays(levelAmount);
-	}
-
-	#endregion
-
-	#region Private
-	void InitializeArrays(int amount)
-	{
-		_coinsPerLevel = new int[amount];
-		_moonsPerLevel = new int[amount];
-	}
 	#endregion
 
 	#region Public
@@ -57,17 +32,17 @@ public class Player_Rewards : EnumeratorManager
 			default:
 			{
 				print("The kind " + kindOfReward + "has not been defined, it will be passed as a coin");
-				_coinsPerLevel[_actualLevel] += 1;
+				_coins += 1;
 				break;
 			}
 			case (int)Reward.coin:
 			{
-				_coinsPerLevel[_actualLevel] += 1;
+				_coins += 1;
 				break;
 			}
 			case (int)Reward.moon:
 			{
-				_moonsPerLevel[_actualLevel] += 1;
+				_moons += 1;
 				break;
 			}
 			case (int)Reward.win:
@@ -78,11 +53,11 @@ public class Player_Rewards : EnumeratorManager
         }
         if (coinsText != null)
         {
-            coinsText.text = _coinsPerLevel[_actualLevel].ToString();
+            coinsText.text = _coins.ToString();
         }
         if (moonsText != null)
         {
-            moonsText.text = _moonsPerLevel[_actualLevel].ToString();
+            moonsText.text = _moons.ToString();
         }
         if (specialsText != null)
         {
