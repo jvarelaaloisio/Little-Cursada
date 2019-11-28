@@ -128,7 +128,7 @@ MonoBehaviour:
         saturation: 1.55
         contrast: 1
       channelMixer:
-        red: {x: 1, y: 0, z: 0}
+        red: {x: 0.52, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0, y: 0, z: 1}
         currentEditingChannel: 0
@@ -139,9 +139,9 @@ MonoBehaviour:
           power: {r: 1, g: 1, b: 1, a: 0}
           offset: {r: 1, g: 1, b: 1, a: 0}
         linear:
-          lift: {r: 1, g: 0.52201474, b: 0.5063057, a: 0}
-          gamma: {r: 0.5620543, g: 0.74973714, b: 1, a: 0}
-          gain: {r: 1, g: 0.4434572, b: 0.76031303, a: 0}
+          lift: {r: 0.8621564, g: 0.79134196, b: 1, a: 0}
+          gamma: {r: 0.6853936, g: 0.98887825, b: 1, a: 0}
+          gain: {r: 1, g: 0.544271, b: 0.89655113, a: 0}
       curves:
         master:
           curve:
@@ -158,7 +158,7 @@ MonoBehaviour:
               outWeight: 0
             - serializedVersion: 3
               time: 1
-              value: 1
+              value: 0.775
               inSlope: 1
               outSlope: 1
               tangentMode: 0
@@ -330,7 +330,7 @@ MonoBehaviour:
       opacity: 1
       rounded: 0
   dithering:
-    m_Enabled: 0
+    m_Enabled: 1
   monitors:
     currentMonitorID: 0
     refreshOnPlay: 0
