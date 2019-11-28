@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour, IUpdateable
 	[SerializeField]
 	CameraBehaviour cameraPivot;
 	[SerializeField]
-	GameObject player;
+	Transform player;
 	[SerializeField]
 	[Range(0, 1f)]
 	float timeScale = 1;
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour, IUpdateable
 	#region Private
 	UpdateManager _uManager;
 	bool _pause;
-	bool _playerIsAlive = true; 
+	bool _playerIsAlive = true;
 	#endregion
 
 	#endregion
@@ -56,12 +56,13 @@ public class GameManager : MonoBehaviour, IUpdateable
 		try
 		{
 			_uManager = GameObject.FindObjectOfType<UpdateManager>();
+			_uManager.AddItem(this);
 		}
 		catch (NullReferenceException)
 		{
 			print(this.name + "update manager not found");
 		}
-		if (_uManager != null) _uManager.AddItem(this);
+		if (!player) player = GameObject.FindObjectOfType<Player_Brain>().GetComponent<Transform>();
 		Cursor.visible = false;
 	}
 	public void OnUpdate()
@@ -78,7 +79,7 @@ public class GameManager : MonoBehaviour, IUpdateable
 	/// <returns></returns>
 	public Vector3 GetPlayerPosition()
 	{
-		return player.transform.position;
+		return player.position;
 	}
 
 	/// <summary>
@@ -87,7 +88,7 @@ public class GameManager : MonoBehaviour, IUpdateable
 	/// <returns></returns>
 	public Vector3 GetPlayerRotation()
 	{
-		return player.transform.eulerAngles;
+		return player.eulerAngles;
 	}
 	public void PlayerIsDead(bool Win)
 	{

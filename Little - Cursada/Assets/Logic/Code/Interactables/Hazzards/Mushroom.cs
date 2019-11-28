@@ -20,6 +20,7 @@ public class Mushroom : Hazzard
 	Timer _damageTurnOnTimer,
 		_damageTurnOffTimer,
 		_ticTimer;
+	Animation anim;
 	#endregion
 
 	#endregion
@@ -31,7 +32,8 @@ public class Mushroom : Hazzard
 		_collider.enabled = false;
 		InitializeTimers();
 		_damageTurnOnTimer.Play();
-		//_damageTurnOnTimer.GottaCount = true;
+		anim = GetComponent<Animation>();
+		anim.Play("idle");
 	}
 	#endregion
 
@@ -51,32 +53,30 @@ public class Mushroom : Hazzard
 		switch (ID)
 		{
 			case "Damage On Timer":
-			{
-				_collider.enabled = true;
-				_ticTimer.Play();
-				//_ticTimer.GottaCount = true;
-				_damageTurnOffTimer.Play();
-				//_damageTurnOffTimer.GottaCount = true;
-				particles.Play();
-				break;
-			}
+				{
+					_collider.enabled = true;
+					particles.Play();
+					anim.Play("hop");
+					_ticTimer.Play();
+					_damageTurnOffTimer.Play();
+					break;
+				}
 			case "Damage Off Timer":
-			{
-				if(_damageables.Count <= 0) _collider.enabled = false;
-				_ticTimer.Stop();
-				//_ticTimer.GottaCount = false;
-				_damageTurnOnTimer.Play();
-				//_damageTurnOnTimer.GottaCount = true;
-				particles.Stop();
-				break;
-			}
+				{
+					if (_damageables.Count <= 0) _collider.enabled = false;
+					anim.Play("idle");
+					_ticTimer.Stop();
+					_damageTurnOnTimer.Play();
+					particles.Stop();
+					break;
+				}
 			case "Tic Timer":
-			{
-				Attack();
-				_ticTimer.Play();
-				//_ticTimer.GottaCount = true;
-				break;
-			}
+				{
+					Attack();
+					_ticTimer.Play();
+					//_ticTimer.GottaCount = true;
+					break;
+				}
 		}
 	}
 	#endregion
