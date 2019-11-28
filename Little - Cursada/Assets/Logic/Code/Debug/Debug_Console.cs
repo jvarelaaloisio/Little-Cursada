@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System;
 
 public class Debug_Console : MonoBehaviour, IUpdateable
@@ -78,6 +79,9 @@ public class Debug_Console : MonoBehaviour, IUpdateable
 		_commands.Add(new Command("savePosition", "guarda la posición actual", SavePosition));
 		_commands.Add(new Command("loadPosition", "carga la posición guardada", LoadPosition));
 		_commands.Add(new Command("flash", "te sentís re logi, eh (acelera al PJ)", Flash));
+		_commands.Add(new Command("restart", "Reinicia el Nivel", loadLVL));
+		_commands.Add(new Command("menu", "Vuelve al menú principal", loadMenu));
+		_commands.Add(new Command("credits", "muestra los creditos", loadCredits));
 	}
 
 	public void OnUpdate()
@@ -166,6 +170,19 @@ public class Debug_Console : MonoBehaviour, IUpdateable
 			WriteFeedBack("Flash: Off");
 		}
 		_commands[(int)Cmd.flash].state = !_commands[(int)Cmd.flash].state;
+	}
+
+	void loadLVL()
+	{
+		SceneManager.LoadScene(1);
+	}
+	void loadMenu()
+	{
+		SceneManager.LoadScene(0);
+	}
+	void loadCredits()
+	{
+		SceneManager.LoadScene(2);
 	}
 	#endregion
 
