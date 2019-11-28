@@ -307,12 +307,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainTracks:
   - {fileID: 8300000, guid: 099c4a2e5f7baf84ebe6d1f8687f6104, type: 3}
-  BGMIndex: 0
-  PitchedIndex: 0
-  CommonIndex: 0
-  CharacterIndex: 0
-  CharacterWalkingIndex: 0
-  Sources: []
+  - {fileID: 8300000, guid: 9551f15f6f3b4cf42b09a8678cb53ecb, type: 3}
+  - {fileID: 8300000, guid: c45c0c75e817d044e94c4aebee3e85d7, type: 3}
   Mixer: {fileID: 24100000, guid: d3b17fbb6760b2c4588ab054e48a8154, type: 2}
   SnapshotsVolDown:
   - {fileID: 24500006, guid: d3b17fbb6760b2c4588ab054e48a8154, type: 2}
@@ -340,7 +336,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1f667c6157a25d849b606a63b6360c9f, type: 3}
   - {fileID: 8300000, guid: c46e34f7e30ab2648ba629e628f2d394, type: 3}
   silencePeriodMin: 5
-  silencePeriodMax: 10
+  silencePeriodMax: 30
 --- !u!1 &4586203727696566177
 GameObject:
   m_ObjectHideFlags: 0

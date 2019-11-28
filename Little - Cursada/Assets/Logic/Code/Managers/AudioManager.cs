@@ -19,38 +19,42 @@ public class AudioManager : MonoBehaviour
 	}
 
 	public AudioClip[] MainTracks;
-	public int BGMIndex,
-		PitchedIndex,
-		CommonIndex,
-		CharacterIndex,
-		CharacterWalkingIndex;
 
-	public AudioSource[] Sources;
+	AudioSource[] Sources;
 	public AudioMixer Mixer;
 	public AudioMixerSnapshot[] SnapshotsVolDown, SnapshotsVolUp;
 	#endregion
 
 	#region Unity
-	void Awake()
+	void Start()
 	{
 		Sources = GetComponentsInChildren<AudioSource>();
-		PlayMainMusic(BGMIndex, 0);
+		SelectMainMusic();
 	}
 	#endregion
 
 	#region Private
+
+	void SelectMainMusic()
+	{
+		int musicTrack = Random.Range(0, MainTracks.Length);
+		PlayMainMusic(musicTrack);
+		Invoke("SelectMainMusic", MainTracks[musicTrack].length);
+	}
 	/// <summary>
 	/// Controls the BGM
 	/// </summary>
 	/// <param name="Index"></param>
 	/// <param name="Track"></param>
-	void PlayMainMusic(int Index, int Track)
+	void PlayMainMusic(int Track)
 	{
-		if (Track < MainTracks.Length)
+		if (Track >= MainTracks.Length)
 		{
-			Sources[Index].clip = MainTracks[Track];
-			Sources[Index].Play();
+			Track = MainTracks.Length - 1;
+			Debug.Log("Track not found");
 		}
+			Sources[(int)SoundIndex.Music].clip = MainTracks[Track];
+			Sources[(int)SoundIndex.Music].Play();
 	}
 	#endregion
 
