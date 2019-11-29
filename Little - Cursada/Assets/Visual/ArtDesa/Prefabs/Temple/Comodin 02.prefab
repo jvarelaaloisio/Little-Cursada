@@ -22,7 +22,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6858727710325215985}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Comodin 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,6 +71,10 @@ PrefabInstance:
     - target: {fileID: 117512, guid: f3be1ef107933d34d9ca25815249a775, type: 3}
       propertyPath: m_Name
       value: SM_Env_Pillar_Square_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 117512, guid: f3be1ef107933d34d9ca25815249a775, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 416452, guid: f3be1ef107933d34d9ca25815249a775, type: 3}
       propertyPath: m_LocalPosition.x
@@ -147,6 +151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_Fire (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fabff3cbe4a4be24a90f7b23e155e025, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fabff3cbe4a4be24a90f7b23e155e025, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.1187
@@ -222,6 +230,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Pillar_Square_03 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 194992, guid: 52301af46bf2aca4cba80ecf307a7777, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 422452, guid: 52301af46bf2aca4cba80ecf307a7777, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.1064
@@ -293,15 +305,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6858727710325215985}
     m_Modifications:
-    - target: {fileID: 2802911583418753579, guid: 056373e51d353c74ba5313e8519689b0,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: c548a2b088782a5428993b15313aec29,
-        type: 2}
     - target: {fileID: 171640, guid: 056373e51d353c74ba5313e8519689b0, type: 3}
       propertyPath: m_Name
       value: SM_Env_Steps_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 171640, guid: 056373e51d353c74ba5313e8519689b0, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 425378, guid: 056373e51d353c74ba5313e8519689b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -359,6 +369,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.61546
       objectReference: {fileID: 0}
+    - target: {fileID: 2802911583418753579, guid: 056373e51d353c74ba5313e8519689b0,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: c548a2b088782a5428993b15313aec29,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 056373e51d353c74ba5313e8519689b0, type: 3}
 --- !u!4 &585779209865638752 stripped
@@ -374,15 +390,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6858727710325215985}
     m_Modifications:
-    - target: {fileID: 2802911583418753579, guid: 056373e51d353c74ba5313e8519689b0,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: c548a2b088782a5428993b15313aec29,
-        type: 2}
     - target: {fileID: 171640, guid: 056373e51d353c74ba5313e8519689b0, type: 3}
       propertyPath: m_Name
       value: SM_Env_Steps_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 171640, guid: 056373e51d353c74ba5313e8519689b0, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 425378, guid: 056373e51d353c74ba5313e8519689b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -440,6 +454,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.61546
       objectReference: {fileID: 0}
+    - target: {fileID: 2802911583418753579, guid: 056373e51d353c74ba5313e8519689b0,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: c548a2b088782a5428993b15313aec29,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 056373e51d353c74ba5313e8519689b0, type: 3}
 --- !u!4 &1502010065150808959 stripped
@@ -458,6 +478,10 @@ PrefabInstance:
     - target: {fileID: 117512, guid: f3be1ef107933d34d9ca25815249a775, type: 3}
       propertyPath: m_Name
       value: SM_Env_Pillar_Square_06 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 117512, guid: f3be1ef107933d34d9ca25815249a775, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 416452, guid: f3be1ef107933d34d9ca25815249a775, type: 3}
       propertyPath: m_LocalPosition.x
@@ -533,6 +557,10 @@ PrefabInstance:
     - target: {fileID: 194524, guid: 70463c54c1faa4342b83e79634b02013, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Rune_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 194524, guid: 70463c54c1faa4342b83e79634b02013, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 424002, guid: 70463c54c1faa4342b83e79634b02013, type: 3}
       propertyPath: m_LocalPosition.x
@@ -615,6 +643,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Pillar_Square_Base_01
       objectReference: {fileID: 0}
+    - target: {fileID: 106042, guid: a9c41660a8948154890e05e9b6a4026e, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 419168, guid: a9c41660a8948154890e05e9b6a4026e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.13056
@@ -686,15 +718,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6858727710325215985}
     m_Modifications:
-    - target: {fileID: 2802911583418753579, guid: 056373e51d353c74ba5313e8519689b0,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: c548a2b088782a5428993b15313aec29,
-        type: 2}
     - target: {fileID: 171640, guid: 056373e51d353c74ba5313e8519689b0, type: 3}
       propertyPath: m_Name
       value: SM_Env_Steps_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 171640, guid: 056373e51d353c74ba5313e8519689b0, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 425378, guid: 056373e51d353c74ba5313e8519689b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -752,6 +782,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.61546
       objectReference: {fileID: 0}
+    - target: {fileID: 2802911583418753579, guid: 056373e51d353c74ba5313e8519689b0,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: c548a2b088782a5428993b15313aec29,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 056373e51d353c74ba5313e8519689b0, type: 3}
 --- !u!4 &4232330759408365440 stripped
@@ -770,6 +806,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: fabff3cbe4a4be24a90f7b23e155e025, type: 3}
       propertyPath: m_Name
       value: FX_Fire (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fabff3cbe4a4be24a90f7b23e155e025, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fabff3cbe4a4be24a90f7b23e155e025, type: 3}
       propertyPath: m_LocalPosition.x
@@ -846,6 +886,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Pillar_Square_06 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 117512, guid: f3be1ef107933d34d9ca25815249a775, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 416452, guid: f3be1ef107933d34d9ca25815249a775, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.5062
@@ -921,6 +965,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Pillar_Square_03 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 194992, guid: 52301af46bf2aca4cba80ecf307a7777, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 422452, guid: 52301af46bf2aca4cba80ecf307a7777, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.8207
@@ -992,15 +1040,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6858727710325215985}
     m_Modifications:
-    - target: {fileID: 2802911583418753579, guid: 056373e51d353c74ba5313e8519689b0,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: c548a2b088782a5428993b15313aec29,
-        type: 2}
     - target: {fileID: 171640, guid: 056373e51d353c74ba5313e8519689b0, type: 3}
       propertyPath: m_Name
       value: SM_Env_Steps_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 171640, guid: 056373e51d353c74ba5313e8519689b0, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 425378, guid: 056373e51d353c74ba5313e8519689b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1058,6 +1104,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.61546
       objectReference: {fileID: 0}
+    - target: {fileID: 2802911583418753579, guid: 056373e51d353c74ba5313e8519689b0,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: c548a2b088782a5428993b15313aec29,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 056373e51d353c74ba5313e8519689b0, type: 3}
 --- !u!4 &7409573985550163239 stripped
@@ -1076,6 +1128,10 @@ PrefabInstance:
     - target: {fileID: 117512, guid: f3be1ef107933d34d9ca25815249a775, type: 3}
       propertyPath: m_Name
       value: SM_Env_Pillar_Square_06 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 117512, guid: f3be1ef107933d34d9ca25815249a775, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 416452, guid: f3be1ef107933d34d9ca25815249a775, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1152,6 +1208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Pillar_Square_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 194992, guid: 52301af46bf2aca4cba80ecf307a7777, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 422452, guid: 52301af46bf2aca4cba80ecf307a7777, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.1495
@@ -1226,6 +1286,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: fabff3cbe4a4be24a90f7b23e155e025, type: 3}
       propertyPath: m_Name
       value: FX_Fire (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fabff3cbe4a4be24a90f7b23e155e025, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fabff3cbe4a4be24a90f7b23e155e025, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1302,6 +1366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fabff3cbe4a4be24a90f7b23e155e025, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fabff3cbe4a4be24a90f7b23e155e025, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.1187
@@ -1376,6 +1444,10 @@ PrefabInstance:
     - target: {fileID: 194992, guid: 52301af46bf2aca4cba80ecf307a7777, type: 3}
       propertyPath: m_Name
       value: SM_Env_Pillar_Square_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 194992, guid: 52301af46bf2aca4cba80ecf307a7777, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 422452, guid: 52301af46bf2aca4cba80ecf307a7777, type: 3}
       propertyPath: m_LocalPosition.x

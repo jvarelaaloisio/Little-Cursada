@@ -3,7 +3,6 @@
 public class Player_Rewards : EnumeratorManager
 {
 	#region Public
-	public int levelAmount;
 	public float[] specialCooldowns;
 	public Text coinsText,
 		moonsText,
@@ -13,6 +12,16 @@ public class Player_Rewards : EnumeratorManager
 		get
 		{
 			return specialCount;
+		}
+	}
+	#endregion
+
+	#region Getters
+	public int Moons
+	{
+		get
+		{
+			return _moons;
 		}
 	}
 	#endregion
@@ -53,7 +62,7 @@ public class Player_Rewards : EnumeratorManager
         }
         if (coinsText != null)
         {
-            coinsText.text = _coins.ToString();
+            coinsText.text = (_coins * 100).ToString();
         }
         if (moonsText != null)
         {
