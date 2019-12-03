@@ -174,31 +174,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 768914768453215490, guid: a5052c6bc40a1f9469d1a1008df5f1bb,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.9292453
-      objectReference: {fileID: 0}
-    - target: {fileID: 768914768453215490, guid: a5052c6bc40a1f9469d1a1008df5f1bb,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 768914768453215490, guid: a5052c6bc40a1f9469d1a1008df5f1bb,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.99791896
-      objectReference: {fileID: 0}
-    - target: {fileID: 768914768453215490, guid: a5052c6bc40a1f9469d1a1008df5f1bb,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.6156863
-      objectReference: {fileID: 0}
-    - target: {fileID: 768914768453215490, guid: a5052c6bc40a1f9469d1a1008df5f1bb,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 1.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5052c6bc40a1f9469d1a1008df5f1bb, type: 3}
 --- !u!4 &8406230844873591253 stripped
